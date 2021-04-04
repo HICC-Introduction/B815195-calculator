@@ -20,7 +20,7 @@ Keypad Calculatorpad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
 int positionpin[] = {0,1,2,3}; // 4자리 결정
 int segment_pin[] = {4,5,14,15,16,17,18,19}; // 4dig 7seg 핀 상수 지정
 byte data[] = {0xFC, 0x60, 0xDA, 0xF2, 0x66, 0xB6, 0xBE, 0xE4, 0xFE, 0xE6}; // 0-9 seg값
-int Watingtime = 5;
+const int delayTime = 5; // 7seg 4자리 숫자 표기시 딜레이 여유
 
 
 void setup() {
@@ -55,8 +55,38 @@ char Control = kepad.getKey(); // 키패드로 입력한 문자(숫자/문자 �
 void loop() {
   // put your main code here, to run repeatedly:
 
-if(Control == A){ // A버튼 "덧셈" 구현
+if(Control){
+  if(Control == A){
+    if( ){
+      show(1, 
+    }
+    
+}
+
   if(
   
 }
+}
+
+void SHOW4Digit(int answer){ // 결과값을 출력하는 함수
+
+  int First = answer/1000;
+  int Second = {(answer/100) - (First*10)};
+  int Thrid =  {(answer/10) - (First*100) - (Second*10)};
+  int Fourth = { answer - (First*1000) - (Second*100) - (Thrid*10) };
+  
+  show(1,First);                //첫 번째 자리 출력
+  delay(delayTime);         //0.005초 일시정지
+  
+  show(2,Second);                //두 번째 자리 출력
+  delay(delayTime);         //0.005초 일시정지
+ 
+  show(3,Thrid);                //세 번째 자리 출력
+  delay(delayTime);         //0.005초 일시정지
+  
+  show(4,Fourth);                //네 번째 자리 출력
+  delay(delayTime);
+
+  delay(1000);
+
 }
