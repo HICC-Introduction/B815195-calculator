@@ -20,7 +20,7 @@ Keypad Calculatorpad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
 int positionpin[] = {0,1,2,3}; // 4자리 결정
 int segment_pin[] = {4,5,14,15,16,17,18,19}; // 4dig 7seg 핀 상수 지정
 byte data[] = {0xFC, 0x60, 0xDA, 0xF2, 0x66, 0xB6, 0xBE, 0xE4, 0xFE, 0xE6}; // 0-9 seg값
-const int delayTime = 5;
+int Watingtime = 5;
 
 
 void setup() {
@@ -48,14 +48,14 @@ void setup() {
 int RESULT = 0; // 결과값 출력 구현 변수
 int DEL = 0; // 화면 출력 초기화 구현 변수
 
-char number = kepad.getKey(); // 키패드로 입력한 문자(숫자/문자 포함)을 문자 변수로 받음
+char Control = kepad.getKey(); // 키패드로 입력한 문자(숫자/문자 포함)을 문자 변수로 받음
 
 
 
 void loop() {
   // put your main code here, to run repeatedly:
 
-if(MODE = 1){ // A 버튼을 눌렀을때 덧셈으로 계산이 되도록
+if(Control == A){ // A버튼 "덧셈" 구현
   if(
   
 }
