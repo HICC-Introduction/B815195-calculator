@@ -29,10 +29,11 @@
 ### 하드웨어 - 부품
 |인덱스|역할|모델명|가격|상세|링크|
 |---|---|---|---|---|---|
-|1|   |   |원|   |   |
-|2|   |   |원|   |   |
-|3|   |   |원|   |   |
-|총합|   |   |원|   |   |
+|1| MCU  | 아두이노 UNO   | 6400원|   | https://smartstore.naver.com/openidea/products/4828947299%7C  |
+|2| 디스플레이 | TM1637  |1250 * 2 = 2500 원| 개별 추가구매  |  동신전자  |
+|3| 키패드  | OPEN-TC06-013  |670원|   | https://smartstore.naver.com/openidea/products/4833221581%7C  |
+|총합|   |   |9,570원|   |   |
+
 
 ### 소프트웨어
 * OS : [Microsoft Windows 10 Pro 10.0.18363 build 18363]
@@ -64,4 +65,19 @@
 
 * 본인의 코드 룰 
 
-[위의 코드를 본인의 스타일로 직접 짜보세요]
+#include <stdio.h>
+
+int test_variable = 13;
+
+int TestClass (int testProperty)  // 함수명
+{ 
+   return testProperty;
+}   
+ 
+int main (void)
+ {
+    if(test_variable==43)
+       test_variable=TestClass(43);
+       printf("%d \n", test_variable);
+       return 0;
+  }
