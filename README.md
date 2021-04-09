@@ -62,22 +62,3 @@
         test_variable = TestClass(43)
         test_variable.TestMethod()
 ```
-
-* 본인의 코드 룰 
-
-#include <stdio.h>
-
-int test_variable = 13;
-
-int TestClass (int testProperty)  // 함수명
-{ 
-   return testProperty;
-}   
- 
-int main (void)
- {
-    if(test_variable==43)
-       test_variable=TestClass(43);
-       printf("%d \n", test_variable);
-       return 0;
-  }
